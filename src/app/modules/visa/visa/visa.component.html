@@ -3,7 +3,9 @@
         <img src="../../../../assets/images/AcadimyOfIrtqi-logo.png">   
           </div>
           <div class="language">
-            <img src="../../../../assets/images/Flag EN.png">
+            <img src="../../../../assets/images/language.png" alt="">
+            <!-- <img src="../../../../assets/images/Flag EN.png" id="en-flag">
+            <img src="../../../../assets/images/flag-of-saudi-arabia.png" alt="" id="ar-flag"> -->
       
                 <select name="" id="" (change)="changeLang($event)">
                   <option value="en">En</option>
@@ -37,15 +39,16 @@
         <span id="title">{{'tittle' | translate}}</span>
         <span id="Desc">
             <ul>
-                <li>A safe and engaging educational environment.</li>
-                <li>A selection of highly qualified teachers with top Sharia and educational certification.</li>
-                <li>Short lessons tailored to fit your free time.</li>
-                <li>Interactive teaching strategies suitable for all age groups.</li>
-                <li>Accredited certificates that document your achievements at every level of learning.</li>
+                <li>{{'desc1' | translate}}</li>
+                <li>{{'desc2' | translate}}</li>
+                <li>{{'desc3' | translate}}</li>
+                <li>{{'desc4' | translate}}</li>
+                <li>{{'desc5' | translate}}</li>
             </ul>
         </span>
-     <button>Pay Now
-      <img src="../../../../assets/images/arrow-right.png" alt="">
+     <button>{{'pay' | translate}}
+      <!-- <img src="../../../../assets/images/arrow-right.png" alt="" id="arrow-right">
+      <img src="../../../../assets/images/arrow-left.png" alt="" id="arrow-left"> -->
      </button>
     </div>
     <div class="right">
@@ -61,40 +64,57 @@
       <img src="../../../../assets/images/AcadimyOfIrtqi-logo.png">   
         </div>
         <span id="Desc">
-         Irtaqi is a digital academy for teaching the Quran, where all interactions take place online . 
-         It emphasizes the teaching of our Islamic values and offers affordable subscription fees.
+         {{'short-desc' | translate}}
         </span>
         
 
   </div>
   <div class="location">
-    <span id="contact">Contact US</span>
+    <span id="contact">{{'contact' | translate}}</span>
     <div class="street">
-      <img src="../../../../assets/images/location.svg" alt="">
-      <span>Riyadh, Waha Street</span>
+      <div>
+        <img src="../../../../assets/images/location.svg" alt="">
+      </div>
+      
+      <span>{{'location' | translate}}</span>
     </div>
     <div class="street">
+      <div>
       <img src="../../../../assets/images/call.svg" alt="">
+
+      </div>
       <span>+*************678</span>
     </div>
     <div class="street">
+      <div>
       <img src="../../../../assets/images/sms-tracking.svg" alt="">
+
+      </div>
       <span>www.*************.com</span>
     </div>
   </div>
   <div class="right">
-    <span >Stay Connected</span>
+    <span >{{'connect' | translate}}</span>
     <div class="social">
       <div class="facebook">
+        <div>
         <img src="../../../../assets/images/facebook1.svg" alt="">
+
+        </div>
         <span>Facebook</span>
       </div>
       <div class="facebook">
+        <div>
         <img src="../../../../assets/images/instagram.svg" alt="">
+
+        </div>
         <span>Instagram</span>
       </div>
       <div class="facebook">
-        <img src="../../../../assets/images/Twitter.svg" alt="">
+        <div>
+          <img src="../../../../assets/images/Twitter.svg" alt="">
+
+        </div>
         <span>Twitter</span>
       </div>
     </div>
