@@ -27,9 +27,17 @@
     font-family: myfont-bold;
     src: url(../fonts/Roboto-Bold.eot);
 }
+@font-face {
+    font-family: IBM-Plex;
+    src: url(../fonts/IBMPlexSansArabic-Bold.ttf);
+}
+
 
 //Arabic
-
+@font-face {
+    font-family: cairo-black;
+    src: url(../fonts/Cairo-Black.ttf);
+}
 @font-face {
     font-family: myfont-ar;
     src: url(../fonts/Tajawal-Medium.ttf);

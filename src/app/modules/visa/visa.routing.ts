@@ -6,11 +6,7 @@ import { VisaComponent } from './visa/visa.component';
 
 const routes: Routes = [
 
-  // {
-  //   path: '',
-  //   redirectTo: '/auth/login',
-  //   pathMatch: 'full',
-  // },
+
   {
     path: 'payment',
     component: VisaComponent,
