@@ -9,7 +9,13 @@
   "short-desc":"Irtaqi is a digital academy for teaching the Quran, where all interactions take place online. It emphasizes the teaching of our Islamic values and offers affordable subscription fees.",
   "contact":"Contact Us",
   "location":"Location Desc",
-  "connect":"Stay Connected"
-  
-
+  "connect":"Stay Connected",
+  "Name":"Name",
+  "Value":"Value",
+  "Currency":"Currency",
+  "Link":"Link",
+  "AddPayment_Payment":"Add Payment",
+  "Generated":"Generated",
+  "Payments":"Payments",
+  "Delete_Payment":"Delete Payment"
 }

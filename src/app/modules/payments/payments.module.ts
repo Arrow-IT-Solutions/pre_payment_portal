@@ -29,6 +29,9 @@ export interface PaymentRequest extends RequestBase {
   fromMonth?: string,
   toMonth?: string,
   date?: string,
+  currency?:string,
+  name?:string,
+  value?:string
 
 }
 
@@ -39,6 +42,9 @@ export interface PaymentUpdateRequest extends RequestBase {
   fromMonth?: string,
   toMonth?: string,
   date?: string,
+  currency?:string,
+  name?:string,
+  value?:string,
 }
 
 export interface PaymentSearchRequest extends SearchRequestBase {
@@ -53,5 +59,10 @@ export interface PaymentResponse extends ResponseBase {
   driverIDFK?: string,
   month?: string,
   date?: string,
-  receiptNo?: string
+  receiptNo?: string;
+  name?:string;
+  value?:string;
+  currency?:string;
+  link?:string;
 }
+

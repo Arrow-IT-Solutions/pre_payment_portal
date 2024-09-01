@@ -10,7 +10,16 @@
   "contact":"التواصل معنا",
   "location":"الموقع بالعربية",
   "connect":"ابقى على الاطلاع",
-  "arrow":""
+  "Name":"الاسم",
+  "Value":"القيمة",
+  "Currency":"العملة",
+  "Link":"الرابط",
+  "AddPayment_Payment":"أضف دفعة",
+  "Generated":"إضافة",
+  "Payments":"الدفعات",
+  "Delete_Payment":"حذف الدفعة"
+
+
 
 
 }
