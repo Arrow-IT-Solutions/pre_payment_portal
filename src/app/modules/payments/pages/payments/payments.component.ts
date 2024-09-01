@@ -18,32 +18,28 @@ import { from } from 'rxjs';
 export class PaymentsComponent {
   dataForm!: FormGroup;
   submitted: boolean = false;
-  invalidRange: boolean = false
+  
   btnLoading: boolean = false;
   loading: boolean = false;
   data: PaymentResponse[] = [];
-  driverTotal: number = 0;
+ 
   pageSize: number = 12;
   totalRecords: number = 0;
   doneTypingInterval = 1000;
   typingTimer: any;
-  fromMonths: { label: string, value: number }[] = [];
-  toMonths: { label: string, value: number }[] = [];
+  
 
-  selectedFromMonth: number | null = null;
-  selectedToMonth: number | null = null;
+  selectedCurrency: string | null = null;
+  
 
   isResetting: boolean = false;
+ currency=Array.from(["JOD","USD"]);
   constructor(public layoutService: LayoutService, public paymentService: PaymentService, public messageService: MessageService, public confirmationService: ConfirmationService, public formBuilder: FormBuilder, public translate: TranslateService) {
     this.dataForm = this.formBuilder.group({
-      driverSearch: [''],
-      fromMonth: ['', Validators.required],
-      toMonth: ['', Validators.required],
-      amount: ['', Validators.required],
-      date: ['', Validators.required],
-      fromDate: [''],
-      toDate: [''],
-      driver: ['', Validators.required]
+      currency: ['', Validators.required],
+      name:['',Validators.required],
+      value:['',Validators.required]
+      
 
     });
   }
@@ -53,7 +49,7 @@ export class PaymentsComponent {
   }
 
   async ngOnInit() {
-    this.initializeMonths();
+    
     await this.FillData();
   }
 
@@ -63,11 +59,7 @@ export class PaymentsComponent {
 
 
 
-  initializeMonths() {
-    this.fromMonths = Array.from({ length: 12 }, (v, i) => ({ label: (i + 1).toString(), value: i + 1 }));
-    this.toMonths = Array.from({ length: 12 }, (v, i) => ({ label: (i + 1).toString(), value: i + 1 }));
-
-  }
+ 
 
   confirmDelete(row: PaymentResponse) {
 
@@ -99,10 +91,9 @@ export class PaymentsComponent {
 
     this.data = [];
     this.paymentService.SelectedData = null;
-    this.driverTotal = 0
+    
 
     let filter: PaymentSearchRequest = {
-      driverIDFK: this.dataForm.controls['driverSearch'].value == null ? '' : this.dataForm.controls['driverSearch'].value.toString(),
       includeDriver: '1',
       pageIndex: pageIndex.toString(),
       pageSize: this.pageSize.toString()
@@ -111,10 +102,10 @@ export class PaymentsComponent {
 
     if (response.data == null || response.data.length == 0) {
       this.data = [];
-      this.driverTotal = 0;
+    
     } else if (response.data != null && response.data.length != 0) {
       this.data = response.data;
-      this.driverTotal = response.data[0];
+     
     }
 
     this.totalRecords = response.totalRecords;
@@ -122,31 +113,7 @@ export class PaymentsComponent {
     this.loading = false;
   }
 
-  OpenDialog(row: PaymentResponse | null = null) {
-
-    this.paymentService.SelectedData = row;
-    this.dataForm.controls['driver'].disable();
-
-
-    let months = this.paymentService.SelectedData?.month
-
-    if (typeof months == 'string' && months.length > 0) {
-      let monthArray = months.split(',');
-      let fromMonth = monthArray[0];
-      let toMonth = monthArray[monthArray.length - 1];
-
-
-      let temp = {
-        // driver: this.paymentService.SelectedData?.driver?.uuid,
-        date: this.paymentService.SelectedData?.date,
-        amount: this.paymentService.SelectedData?.amount,
-        fromMonth: Number(fromMonth),
-        toMonth: Number(toMonth),
-      };
-      this.dataForm.patchValue(temp);
-    }
-
-  }
+ 
 
   async resetform() {
     this.isResetting = true;
@@ -179,11 +146,6 @@ export class PaymentsComponent {
         return;
       }
 
-      if (Number(this.dataForm.controls['fromMonth'].value) > Number(this.dataForm.controls['toMonth'].value)) {
-        this.invalidRange = true;
-        this.submitted = true
-        return;
-      }
       await this.Save();
     } catch (exceptionVar) {
     } finally {
@@ -193,29 +155,30 @@ export class PaymentsComponent {
 
   async Save() {
     let response;
-    let date = new Date(this.dataForm.controls['date'].value)
+    
 
     if (this.paymentService.SelectedData != null) {
       // update
 
       var driver: PaymentUpdateRequest = {
-        uuid: this.paymentService.SelectedData?.uuid?.toString(),
-        driverIDFK: this.dataForm.controls['driver'].value.toString(),
-        amount: this.dataForm.controls['amount'].value.toString(),
-        date: date.toISOString(),
-        fromMonth: this.dataForm.controls['fromMonth'].value.toString(),
-        toMonth: this.dataForm.controls['toMonth'].value.toString(),
+        
+        
+        
+        
+        currency: this.dataForm.controls['currency'].value.toString(),
+       name:this.dataForm.controls['name'].value.toString(),
+       value:this.dataForm.controls['value'].value.toString()
       };
 
       response = await this.paymentService.Update(driver);
     } else {
       // add
       var payment: PaymentRequest = {
-        driverIDFK: this.dataForm.controls['driver'].value.toString(),
-        fromMonth: this.dataForm.controls['fromMonth'].value.toString(),
-        toMonth: this.dataForm.controls['toMonth'].value.toString(),
-        amount: this.dataForm.controls['amount'].value.toString(),
-        date: date.toISOString(),
+        currency: this.dataForm.controls['currency'].value.toString(),
+        name:this.dataForm.controls['name'].value.toString(),
+        value:this.dataForm.controls['value'].value.toString()
+
+        
       };
 
       response = await this.paymentService.Add(payment);
@@ -223,10 +186,10 @@ export class PaymentsComponent {
 
     if (response?.requestStatus?.toString() == '200') {
       this.layoutService.showSuccess(this.messageService, 'toast', true, response?.requestMessage);
-      // if (this.driverService.SelectedData == null) {
-      //   this.resetForm();
-      //   this.FillData();
-      // }
+      
+      this.resetForm();
+      this.FillData();
+
     } else {
       this.layoutService.showError(this.messageService, 'toast', true, response?.requestMessage);
     }

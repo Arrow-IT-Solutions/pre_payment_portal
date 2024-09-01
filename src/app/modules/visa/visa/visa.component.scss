@@ -201,9 +201,13 @@ box-shadow: 0px -5px 5px -5px rgba(0, 0, 0, 0.3);
     }
     #Desc{
         font-family: IBM-Plex;
-        font-size: 15px;
+        
         color:  #616161;
-        line-height: 19.2px;
+font-size: 16px;
+font-weight: 100;
+line-height: 21.6px;
+
+
         & :lang(ar){
             font-family: cairo-black;
         }
