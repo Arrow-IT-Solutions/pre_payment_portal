@@ -10,58 +10,40 @@
           <div class="col-12 row m-0 p-0">
             <div class="col-12 mb-3">
               <div class="p-float-label">
-                <!-- <p-dropdown [options]="drivers" placeholder="{{ 'select' | translate }}" formControlName="driver" optionLabel="driverTranslation.ar.driverName" optionValue="uuid" class="dropDown" [filter]="true" [showClear]="true" filterBy="driverTranslation.ar.driverName" (onFilter)="FillClient($event)"></p-dropdown> -->
-                <label>{{ 'Driver_Payment' | translate }}</label>
-                <small *ngIf="submitted && form['driver'].errors" class="errorValidation" id="username1-help">
+              
+              </div>
+            </div>
+
+           
+
+            <div class="col-12 mb-3">
+              <div class="p-float-label">
+                <input pInputText type="text" formControlName="name"  id="input" />
+                <label>{{ 'Name' | translate }}</label>
+                <span *ngIf="submitted && form['name'].errors" class="error-validation">{{ 'Field Required' | translate }}</span>
+              </div>
+            </div>
+            <div class="col-12 mb-3">
+              <div class="p-float-label">
+                <input pInputText type="text" formControlName="value" id="input"/>
+                <label>{{ 'Value' | translate }}</label>
+                <span *ngIf="submitted && form['value'].errors" class="error-validation">{{ 'Field Required' | translate }}</span>
+              </div>
+            </div>
+            <div class="col-12 mb-3">
+              <div class="p-float-label">
+                <p-dropdown [options]="currency" [(ngModel)]="selectedCurrency" formControlName="currency"></p-dropdown>
+                <label id="month">{{ 'Currency' | translate }}</label>
+                <small *ngIf="submitted && form['currency'].errors" class="errorValidation" id="username1-help">
                   {{ 'Field_Requierd' | translate }}
                 </small>
               </div>
             </div>
 
-            <div class="col-12 mb-3">
-              <div class="p-float-label">
-                <p-dropdown [options]="fromMonths" [(ngModel)]="selectedFromMonth" formControlName="fromMonth"></p-dropdown>
-                <label id="month">{{ 'FromMonth_Payment' | translate }}</label>
-                <small *ngIf="submitted && form['fromMonth'].errors" class="errorValidation" id="username1-help">
-                  {{ 'Field_Requierd' | translate }}
-                </small>
-              </div>
-            </div>
+         
 
-            <div class="col-12 mb-3">
-              <div class="p-float-label">
-                <p-dropdown [options]="toMonths" [(ngModel)]="selectedToMonth" formControlName="toMonth"></p-dropdown>
-                <label id="month">{{ 'ToMonth_Payment' | translate }}</label>
-                <small *ngIf="submitted && form['toMonth'].errors" class="errorValidation" id="username1-help">
-                  {{ 'Field_Requierd' | translate }}
-                </small>
-                <small *ngIf="submitted && invalidRange" class="errorValidation" id="username1-help">
-                  {{ 'Error_ToMonth_Less_Than_FromMonth' | translate }}
-                </small>
-              </div>
-            </div>
-
-            <div class="col-12 mb-3">
-              <div class="p-float-label">
-                <p-calendar [showIcon]="true" formControlName="date"></p-calendar>
-                <label>{{ 'Date_Payment' | translate }}</label>
-                <small *ngIf="submitted && form['date'].errors" class="errorValidation" id="username1-help">
-                  {{ 'Field_Requierd' | translate }}
-                </small>
-              </div>
-            </div>
-
-            <div class="col-12 mb-3">
-              <div class="p-float-label">
-                <p-inputNumber [showButtons]="true" [step]="1" [min]="0" formControlName="amount" buttonLayout="horizontal" decrementButtonClass="p-button-danger" incrementButtonClass="p-button-success" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus"></p-inputNumber>
-                <label class="counter-label">{{ 'Payment_Payment' | translate }}</label>
-                <small *ngIf="submitted && form['amount'].errors" class="errorValidation" id="username1-help">
-                  {{ 'Field_Requierd' | translate }}
-                </small>
-              </div>
-            </div>
             <div class="col-xs-12 mb-3" id="save">
-              <p-button type="Submit" class="btn-primary" label="{{ 'Save_Payment' | translate }}" [loading]="btnLoading"></p-button>
+              <p-button type="Submit" class="btn-primary" label="{{ 'Generated' | translate }}" [loading]="btnLoading"></p-button>
             </div>
           </div>
         </div>
@@ -73,16 +55,10 @@
         <div class="row">
           <div class="col-12 side-icon">
             <span class="material-symbols-outlined">list</span>
-            <span>Payments</span>
+            <span>{{'Payments' | translate}}</span>
           </div>
           <div class="row mb-2 mx-0 p-0 shift-up">
-            <!-- <div class="col-lg-3 col-md-10 col p-0 voucher-items__search">
-              <div class="flex flex-wrap justify-content-center gap-3">
-                <span class="p-input-icon-left p-0 box">
-                  <i class="pi pi-search"></i>
-                </span>
-              </div>
-            </div> -->
+          
             <p-accordion class="p-0">
               <p-accordionTab>
                 <ng-template pTemplate="header">
@@ -98,8 +74,7 @@
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mt-3">
                       <div class="p-float-label">
-                        <!-- <p-dropdown [options]="drivers" placeholder="{{ 'select' | translate }}" formControlName="driverSearch" optionLabel="driverTranslation.ar.driverName" optionValue="uuid" class="dropDown" [filter]="true" [showClear]="true" filterBy="driverTranslation.ar.driverName" (onFilter)="FillClient($event)" (ngModelChange)="OnChange()"></p-dropdown> -->
-                        <label>Driver Name</label>
+                        
                       </div>
                     </div>
                     <div class="col mt-3 text-end">
@@ -122,43 +97,38 @@
                   </div>
                 </div>
                 <div class="card__contents">
-                  <div class="name-ID mx-3">
-                    <!-- <div class="name mb-1">{{ (row.driver?.driverTranslation)![layoutService.config.lang]?.driverName }}</div> -->
-                    <div class="item__ID">
-                      <span>ID: {{ row.receiptNo }}</span>
-                    </div>
-                  </div>
+                 
+                  
+                   
+                  
                   <div class="container2">
                     <div class="card__contents__item">
-                      <div class="card-label">{{ 'Month_Payment' | translate }}</div>
-                      <div class="card-info">{{ row.month }}</div>
+                      <div class="card-label">{{ 'Name' | translate }}</div>
+                      <div class="card-info">{{ row.name }}</div>
+                    </div>
+                    <div class="amount">
+                    <div class="card__contents__item">
+                      <div class="card-label">{{ 'Value' | translate }}</div>
+                      <div class="card-info">{{ row.value }}</div>
                     </div>
                     <div class="card__contents__item">
-                      <div class="card-label">{{ 'ReciptNumber_Payment' | translate }}</div>
-                      <div class="card-info">{{ row.receiptNo }}</div>
+                      <div class="card-label">{{ 'Currency' | translate }}</div>
+                      <div class="card-info">{{ row.currency }} </div>
                     </div>
+                  </div>
                     <div class="card__contents__item">
-                      <div class="card-label">{{ 'Amount_Payment' | translate }}</div>
-                      <div class="card-info">{{ row.amount }} {{ 'JOD' | translate }}</div>
+                      <div class="card-label">{{ 'Link' | translate }}</div>
+                      <div class="card-info">{{ row.link }} </div>
                     </div>
-                    <div class="card__contents__item">
-                      <div class="card-label">{{ 'Date_Payment' | translate }}</div>
-                      <div class="card-info">{{ row.date | date : 'dd-MM-yyyy' }}</div>
-                    </div>
-                    <div class="card__contents__item">
-                      <div class="card-label"></div>
-                      <div class="card-info"></div>
-                    </div>
+                   
+                   
                   </div>
                 </div>
                 <div class="edit">
                   <div class="card__actions">
                     <span [matMenuTriggerFor]="menu" class="material-symbols-outlined card__actions__details">more_vert</span>
                     <mat-menu #menu="matMenu">
-                      <button mat-menu-item (click)="OpenDialog(row)">
-                        <span class="material-symbols-outlined">edit</span>
-                        {{ 'Edit_Payment' | translate }}
-                      </button>
+                      
                       <button mat-menu-item>
                         <span class="material-symbols-outlined">delete</span>
                         {{ 'Delete_Payment' | translate }}
@@ -174,11 +144,7 @@
       </div>
     </div>
 
-    <!-- <div class="col-xs-12 text-end mt-4">
-			<p-button type="Submit"
-				class="btn-primary"
-				label="Save"></p-button>
-		</div> -->
+   
   </div>
 </form>
 <p-toast key="toast"></p-toast>
