@@ -95,7 +95,7 @@ export class LoginComponent implements AfterViewInit {
 
       switch (response.userType) {
         case '0':
-          this.router.navigateByUrl('layout-admin/drivers'); // admin or user
+          this.router.navigateByUrl('layout-admin/payments'); // admin or user
           break;
 
         case '3':
