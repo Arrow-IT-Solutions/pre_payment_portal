@@ -45,6 +45,7 @@ import { DisableElementDirective } from './Core/directive/disable-element.direct
     HeaderAdminComponent,
     MainMenuAdminComponent,
     HasPermissionDirective,
+    
     // DisableElementDirective,
   ],
   imports: [

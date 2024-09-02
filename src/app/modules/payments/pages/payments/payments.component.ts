@@ -34,6 +34,14 @@ export class PaymentsComponent {
 
   isResetting: boolean = false;
  currency=Array.from(["JOD","USD"]);
+ showCopyAlert: boolean = false;
+OnCopyLink(){
+  this.showCopyAlert=true;
+  setTimeout(() => {
+    this.showCopyAlert = false;
+  }, 2000);
+}
+ 
   constructor(public layoutService: LayoutService, public paymentService: PaymentService, public messageService: MessageService, public confirmationService: ConfirmationService, public formBuilder: FormBuilder, public translate: TranslateService) {
     this.dataForm = this.formBuilder.group({
       currency: ['', Validators.required],
@@ -206,6 +214,11 @@ export class PaymentsComponent {
       return;
     navigator.clipboard.writeText(url).then(() => {
       console.log('Link copied to clipboard!');
+      // alert('copied successfuly!')
+      this.OnCopyLink();
+      
+      
+      
     }).catch(err => {
       console.error('Failed to copy: ', err);
     });

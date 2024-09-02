@@ -17,5 +17,6 @@
   "AddPayment_Payment":"Add Payment",
   "Generated":"Generated",
   "Payments":"Payments",
-  "Delete_Payment":"Delete Payment"
+  "Delete_Payment":"Delete Payment",
+  "Copy_Link":"Copy Link"
 }

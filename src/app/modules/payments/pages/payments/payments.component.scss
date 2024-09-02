@@ -89,6 +89,20 @@
         margin-left: 1rem;
       }
     }
+    .box2{
+      gap: 1rem;
+      .message{
+        display: flex;
+        width: 6rem;
+        justify-content: space-around;
+        align-items: center;
+        border: 1px solid black;
+        border-radius: 6px;
+        margin-bottom: 5rem;
+        
+        img{width: 2rem;}
+      }
+    }
       &__search {
         margin-inline-end: 8rem;
     
@@ -325,11 +339,24 @@ margin-bottom: 6px;
 
     &-info {
       font-family: myfont-semibold, myfont-ar-semibold;
-      height: 40px;
       line-height: 40px;
+      
 
-      & .material-symbols-outlined {
-        color: $blue-color;
+     
+      img{
+        width: 1.5rem;
+      }
+      button{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      line-height: 30px;
+
+      border-radius: 6px;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+
       }
     }
 
