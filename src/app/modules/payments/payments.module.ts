@@ -11,7 +11,8 @@ import { RequestBase, ResponseBase, SearchRequestBase, TranslationBase } from 's
 
 @NgModule({
   declarations: [
-    PaymentsComponent
+    PaymentsComponent,
+   
   ],
   imports: [
     CommonModule,

@@ -17,7 +17,9 @@
   "AddPayment_Payment":"أضف دفعة",
   "Generated":"إضافة",
   "Payments":"الدفعات",
-  "Delete_Payment":"حذف الدفعة"
+  "Delete_Payment":"حذف الدفعة",
+  "Copy_Link":"انسخ الرابط",
+  "copied":"تم النسخ"
 
 
 

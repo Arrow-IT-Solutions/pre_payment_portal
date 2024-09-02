@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  baseApiUrl: 'https://localhost:51417'
+  baseApiUrl: 'https://payment-api-dev.apps-jo.com'
 };
 
 //https://payment-api-dev.apps-jo.com
