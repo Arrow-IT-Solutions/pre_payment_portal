@@ -200,4 +200,14 @@ export class PaymentsComponent {
   resetForm() {
     this.dataForm.reset();
   }
+
+  copyLink( url : string) {
+    if(url == "")
+      return;
+    navigator.clipboard.writeText(url).then(() => {
+      console.log('Link copied to clipboard!');
+    }).catch(err => {
+      console.error('Failed to copy: ', err);
+    });
+  }
 }
