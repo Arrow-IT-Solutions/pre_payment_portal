@@ -1,12 +1,12 @@
 {
-  "tittle" : "The Digital Academy for Quranic Studies",
+  "tittle" : "Subscribe The Digital Academy for Quranic Studies",
   "desc1": "A safe and engaging educational environment.",
   "desc2":"A selection of highly qualified teachers with top Sharia and educational certifications.",
   "desc3":"Short lessons tailored to fit your free time.",
   "desc4":"Interactive teaching strategies suitable for all age groups.",
   "desc5":"Accredited certificates that document your achievements at every level of learning.",
   "pay":"Pay Now",
-  "short-desc":"Irtaqi is a digital academy for teaching the Quran, where all interactions take place online. It emphasizes the teaching of our Islamic values and offers affordable subscription fees.",
+  "short-desc":"Irtaqi is a digital academy for teaching the Holy Quran online, focusing on imparting our Islamic values and offering very affordable subscriptions.",
   "contact":"Contact Us",
   "location":"Location Desc",
   "connect":"Stay Connected",
@@ -18,5 +18,6 @@
   "Generated":"Generated",
   "Payments":"Payments",
   "Delete_Payment":"Delete Payment",
-  "Copy_Link":"Copy Link"
+  "Copy_Link":"Copy Link",
+  "copied":"Copied"
 }

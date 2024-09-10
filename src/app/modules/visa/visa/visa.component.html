@@ -4,29 +4,17 @@
           </div>
           <div class="language">
             <img src="../../../../assets/images/language.png" alt="">
-            <!-- <img src="../../../../assets/images/Flag EN.png" id="en-flag">
-            <img src="../../../../assets/images/flag-of-saudi-arabia.png" alt="" id="ar-flag"> -->
+            
       
                 <select name="" id="" (change)="changeLang($event)">
                   <option value="en">En</option>
                   <option value="ar" >Ar</option>
 
                 </select>
+             
                 
                 </div>
-                <!-- <div [matMenuTriggerFor]="langMenu" class="language__icon">
-                  <span class="material-symbols-outlined lang-icon">language</span>
-                  <span class="m-0">English</span>
-                  <span class="material-symbols-outlined m-0"> arrow_drop_down </span>
-                </div> -->
-                <!-- <mat-menu #langMenu="matMenu">
-                  <button mat-menu-item>
-                    English
-                  </button>
-                  <button mat-menu-item>
-                    عربي
-                  </button>
-                </mat-menu> -->
+              
                 
   
        
@@ -63,34 +51,28 @@
     <div class="logo-container">
       <img src="../../../../assets/images/AcadimyOfIrtqi-logo.png">   
         </div>
-        <span id="Desc">
-         {{'short-desc' | translate}}
+        <span id="Desc"><a>{{'short-desc' | translate}}</a>
+         
         </span>
         
 
   </div>
   <div class="location">
     <span id="contact">{{'contact' | translate}}</span>
-    <div class="street">
-      <div>
-        <img src="../../../../assets/images/location.svg" alt="">
-      </div>
-      
-      <span>{{'location' | translate}}</span>
-    </div>
+   
     <div class="street">
       <div>
       <img src="../../../../assets/images/call.svg" alt="">
 
       </div>
-      <span>+*************678</span>
+      <span><a>+962 782 235 489</a></span>
     </div>
     <div class="street">
       <div>
       <img src="../../../../assets/images/sms-tracking.svg" alt="">
 
       </div>
-      <span>www.*************.com</span>
+      <span><a href="mailto:digital.quran.irtaqi@gmail.com">digital.quran.irtaqi@gmail.com</a></span>
     </div>
   </div>
   <div class="right">
@@ -101,22 +83,16 @@
         <img src="../../../../assets/images/facebook1.svg" alt="">
 
         </div>
-        <span>Facebook</span>
+        <span><a href="https://www.facebook.com/digital.quran.irtaqi">digital.quran.irtaqi</a></span>
       </div>
       <div class="facebook">
         <div>
         <img src="../../../../assets/images/instagram.svg" alt="">
 
         </div>
-        <span>Instagram</span>
+        <span><a href="https://www.instagram.com/digital.quran.irtaqi">digital.quran.irtaqi</a></span>
       </div>
-      <div class="facebook">
-        <div>
-          <img src="../../../../assets/images/Twitter.svg" alt="">
-
-        </div>
-        <span>Twitter</span>
-      </div>
+      
     </div>
   </div>
 </div>
