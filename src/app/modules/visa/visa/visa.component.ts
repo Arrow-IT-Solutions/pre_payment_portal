@@ -16,16 +16,26 @@ import { ActivatedRoute } from '@angular/router';
   providers: [MessageService, ConfirmationService]
 })
 export class VisaComponent implements AfterViewInit  {
-  constructor(public translate:TranslateService,public layoutService:LayoutService,@Inject(DOCUMENT) private document: Document,private route: ActivatedRoute){}
+  menuStatus!: boolean;
+  constructor(public translate:TranslateService,
+    public layoutService:LayoutService,
+    @Inject(DOCUMENT) private document: Document,
+    private subjectsService: SubjectsService,
+    public localService: LocalService,
+    private route: ActivatedRoute){}
 
   ngOnInit(){}
 
   ngAfterViewInit(): void {
     this.configureCheckout();
   }
-  // ToTranslate(event:any){
-  //   this.translate.use(event.target.value)
-  // }
+  
+  handleClick(): void {
+    this.subjectsService.menuStatus$.subscribe({
+      next: (e: any) => (this.menuStatus = e),
+    });
+    this.subjectsService.menuStatus$.next(!this.menuStatus);
+  }
 
   changeLang(event:any)
   {
@@ -55,6 +65,7 @@ export class VisaComponent implements AfterViewInit  {
 
      window.location.reload();
   }
+ 
 
 
   configureCheckout() {
